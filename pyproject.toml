@@ -1,0 +1,28 @@
+[project]
+name = "research-paper-knowledge-assistant"
+version = "0.1.0"
+description = "Local, evidence-grounded questions across research PDFs"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "chromadb>=1.5,<2",
+  "sentence-transformers>=5,<6",
+  "PyMuPDF>=1.26,<2",
+  "ollama>=0.6,<1",
+  "pydantic>=2.11,<3",
+  "gradio>=6,<7",
+  "filelock>=3.18,<4",
+  "httpx>=0.28,<1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.12,<1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
